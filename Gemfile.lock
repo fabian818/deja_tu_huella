@@ -85,7 +85,12 @@ GEM
       mini_portile2 (~> 2.0.0.rc2)
     pg (0.18.4)
     puma (2.15.3)
+    rabl-rails (0.4.1)
+      activesupport (>= 3.1)
+      railties (>= 3.1)
+      thread_safe (~> 0.3.1)
     rack (1.6.4)
+    rack-cors (0.4.0)
     rack-pjax (0.8.0)
       nokogiri (~> 1.5)
       rack (~> 1.1)
@@ -138,6 +143,8 @@ GEM
     rdoc (4.2.2)
       json (~> 1.4)
     remotipart (1.2.1)
+    responders (2.1.1)
+      railties (>= 4.2.0, < 5.1)
     safe_yaml (1.0.4)
     sass (3.4.21)
     sass-rails (5.0.4)
@@ -183,9 +190,12 @@ DEPENDENCIES
   jquery-rails
   pg
   puma
+  rabl-rails
+  rack-cors
   rails (= 4.2.5)
   rails_12factor
   rails_admin
+  responders
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

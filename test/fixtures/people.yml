@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  role_id: 
+  politic_party_id: 
+  full_name: MyString
+  sex: false
+  birthday: 2016-02-08
+  dni: MyString
+  birthplace: MyString
+
+two:
+  role_id: 
+  politic_party_id: 
+  full_name: MyString
+  sex: false
+  birthday: 2016-02-08
+  dni: MyString
+  birthplace: MyString

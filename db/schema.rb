@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160209203602) do
+ActiveRecord::Schema.define(version: 20160210001212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "academics", force: :cascade do |t|
+    t.string   "university"
+    t.string   "career"
+    t.string   "period"
+    t.boolean  "completed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "person_id"
+  end
+
+  add_index "academics", ["person_id"], name: "index_academics_on_person_id", using: :btree
 
   create_table "people", force: :cascade do |t|
     t.integer  "role_id"
@@ -40,6 +52,19 @@ ActiveRecord::Schema.define(version: 20160209203602) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "postgraduates", force: :cascade do |t|
+    t.string   "course"
+    t.string   "study_center"
+    t.string   "grade"
+    t.string   "period"
+    t.boolean  "completed"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "person_id"
+  end
+
+  add_index "postgraduates", ["person_id"], name: "index_postgraduates_on_person_id", using: :btree
+
   create_table "roles", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -47,6 +72,20 @@ ActiveRecord::Schema.define(version: 20160209203602) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "work_experiences", force: :cascade do |t|
+    t.string   "work_place"
+    t.string   "period"
+    t.string   "area"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "person_id"
+  end
+
+  add_index "work_experiences", ["person_id"], name: "index_work_experiences_on_person_id", using: :btree
+
+  add_foreign_key "academics", "people"
   add_foreign_key "people", "politic_parties"
   add_foreign_key "people", "roles"
+  add_foreign_key "postgraduates", "people"
+  add_foreign_key "work_experiences", "people"
 end

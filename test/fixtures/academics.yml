@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  university: MyString
+  career: MyString
+  period: MyString
+  completed: false
+
+two:
+  university: MyString
+  career: MyString
+  period: MyString
+  completed: false
